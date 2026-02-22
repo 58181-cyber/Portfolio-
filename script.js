@@ -1,38 +1,26 @@
+const slides = document.querySelector(".slides")
 
-/* cursor glow */
+const next = document.querySelector(".next")
+const prev = document.querySelector(".prev")
 
-const glow = document.querySelector(".cursor-glow");
+next.onclick = () => {
 
-document.addEventListener("mousemove",e=>{
+slides.scrollBy({
 
-glow.style.left = e.clientX+"px";
-glow.style.top = e.clientY+"px";
+left:300,
+behavior:"smooth"
 
-});
+})
 
+}
 
-/* magnetic card */
+prev.onclick = () => {
 
-const cards = document.querySelectorAll(".magnetic");
+slides.scrollBy({
 
-cards.forEach(card=>{
+left:-300,
+behavior:"smooth"
 
-card.addEventListener("mousemove",(e)=>{
+})
 
-const rect = card.getBoundingClientRect();
-
-const x = e.clientX - rect.left - rect.width/2;
-const y = e.clientY - rect.top - rect.height/2;
-
-card.style.transform =
-`rotateX(${-y/20}deg) rotateY(${x/20}deg) scale(1.05)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="rotateX(0) rotateY(0) scale(1)";
-
-});
-
-});
+}
