@@ -310,6 +310,32 @@ transform:translate(-50%,-50%);
 
 }
 
+.header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+
+padding:20px;
+
+display:flex;
+align-items:center;
+
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+height:62px;
+}
+  
+
+body{
+padding-top:80px;
+  }
+
 /* DESKTOP */
 
 @media(min-width:768px){
