@@ -31,7 +31,6 @@ overflow-x:hidden;
 body::before{
 
 content:"";
-
 position:fixed;
 top:-50%;
 left:-50%;
@@ -46,7 +45,6 @@ radial-gradient(circle,#7b4bff,transparent 40%);
 animation:aurora 20s linear infinite;
 
 opacity:0.3;
-
 z-index:-1;
 
 }
@@ -78,9 +76,7 @@ z-index:10;
 .glass{
 
 background:rgba(255,255,255,0.08);
-
 backdrop-filter:blur(25px);
-
 border-bottom:1px solid rgba(255,255,255,0.15);
 
 }
@@ -90,7 +86,6 @@ border-bottom:1px solid rgba(255,255,255,0.15);
 .portfolio-logo{
 
 height:40px;
-
 animation:float 6s ease-in-out infinite;
 
 }
@@ -101,10 +96,7 @@ animation:float 6s ease-in-out infinite;
 
 text-align:center;
 padding:60px 20px;
-
 animation:heroEnter 1.2s ease;
-
-background:none;
 
 }
 
@@ -122,6 +114,7 @@ transform:translateY(0) scale(1);
 
 }
 
+/* TITLE */
 
 .portfolio-title{
 
@@ -133,7 +126,7 @@ margin-bottom:30px;
 
 }
 
-.profile{
+/* PROFILE IMAGE */
 
 .profile{
 
@@ -156,7 +149,7 @@ box-shadow:
 
 transition:0.5s;
 
-  }
+}
 
 .profile:hover{
 
@@ -169,7 +162,6 @@ box-shadow:
 
 }
 
-
 /* ACTIVITY */
 
 .activity-section{
@@ -179,15 +171,12 @@ padding:40px 0;
 }
 
 .slider{
-
 overflow:hidden;
-
 }
 
 .slides{
 
 display:flex;
-
 gap:20px;
 
 animation:slide 16s linear infinite;
@@ -223,9 +212,7 @@ padding:40px;
 .grid{
 
 display:grid;
-
 grid-template-columns:repeat(2,160px);
-
 gap:20px;
 
 }
@@ -247,7 +234,6 @@ backdrop-filter:blur(30px);
 border:1px solid rgba(255,255,255,0.15);
 
 box-shadow:
-
 0 10px 40px rgba(0,0,0,0.3),
 inset 0 1px 1px rgba(255,255,255,0.3);
 
@@ -260,7 +246,6 @@ animation:glassFloat 6s ease-in-out infinite;
 .card:hover{
 
 transform:translateY(-10px) scale(1.05);
-
 background:rgba(255,255,255,0.15);
 
 }
@@ -301,7 +286,6 @@ transform:translate(-50%,-50%);
 @keyframes slide{
 
 0%{transform:translateX(0)}
-
 100%{transform:translateX(-50%)}
 
 }
@@ -309,9 +293,7 @@ transform:translate(-50%,-50%);
 @keyframes float{
 
 0%{transform:translateY(0)}
-
 50%{transform:translateY(-12px)}
-
 100%{transform:translateY(0)}
 
 }
@@ -339,7 +321,11 @@ width:320px;
 height:210px;
 
 }
+
+}
+
 /* MOBILE */
+
 @media (max-width:768px){
 
 .profile{
@@ -349,7 +335,5 @@ width:300px;
 .portfolio-title{
 width:340px;
 }
-
-  }
 
   }
