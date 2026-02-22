@@ -383,7 +383,7 @@ z-index:-1;
 }
 /* DESKTOP */
 
-@media(min-width:768px){
+@media(max-width:768px){
 
 .profile{
 width:420px;
