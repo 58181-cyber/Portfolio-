@@ -1,17 +1,8 @@
-const slides = document.querySelector(".slides")
+const cursor = document.querySelector(".cursor-glow")
 
-let scrollAmount = 0
+document.addEventListener("mousemove",(e)=>{
 
-setInterval(()=>{
+cursor.style.left = e.clientX+"px"
+cursor.style.top = e.clientY+"px"
 
-scrollAmount += 1
-
-slides.scrollLeft = scrollAmount
-
-if(scrollAmount > slides.scrollWidth){
-
-scrollAmount = 0
-
-}
-
-},20)
+})
