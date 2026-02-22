@@ -3,76 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PATCHARAWAT PORTFOLIO</title>
 
-<link rel="stylesheet" href="style.css">
+<title>Patcharawat Portfolio</title>
 
+<style>
+
+:root{
+--bg1:#0f2027;
+--bg2:#203a43;
+--bg3:#2c5364;
+--glass:rgba(255,255,255,0.12);
+--border:rgba(255,255,255,0.2);
+}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:linear-gradient(160deg,var(--bg1),var(--bg2),var(--bg3));
+color:white;
+text-align:center;
+}
+
+/* GLASS */
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* PROFILE */
+
+.profile{
+margin-top:50px;
+}
+
+.profile img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid white;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+h1{
+margin:15px 0 5px;
+font-size:32px;
+letter-spacing:1px;
+}
+
+/* BUTTON */
+
+.view-btn{
+display:inline-block;
+padding:14px 30px;
+margin-top:15px;
+border-radius:40px;
+background:linear-gradient(90deg,#6dd5ed,#2193b0);
+color:white;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+padding:30px;
+max-width:420px;
+margin:auto;
+}
+
+.card{
+padding:22px;
+border-radius:20px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+/* ACTIVITY SLIDER */
+
+.activity-section{
+width:90%;
+max-width:520px;
+margin:40px auto;
+padding:25px;
+}
+
+.slider{
+overflow:hidden;
+border-radius:20px;
+margin-top:15px;
+}
+
+.slides{
+display:flex;
+transition:transform 0.5s ease;
+}
+
+.slides img{
+width:100%;
+flex-shrink:0;
+border-radius:15px;
+}
+
+/* DOT */
+
+.dots{
+margin-top:10px;
+}
+
+.dot{
+height:8px;
+width:8px;
+margin:3px;
+background:white;
+border-radius:50%;
+display:inline-block;
+opacity:0.4;
+}
+
+.active{
+opacity:1;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- PROFILE -->
 
-<div class="menu">☰</div>
+<div class="profile">
 
-<h2>PATCHARAWAT PORTFOLIO</h2>
-
-</header>
-
-
-<section class="hero">
-
-<div class="hero-text">
-
-<p>My name is</p>
+<img src="profilekun.png">
 
 <h1>PATCHARAWAT</h1>
 
-<p>Student | Science Program</p>
-
-<a href="works.html" class="btn">View My Work</a>
+<div class="view-btn">View My Work</div>
 
 </div>
 
-<img src="images/profile.png" class="profile">
 
-</section>
+<!-- ACTIVITY -->
 
-
-
-<section class="activity">
+<div class="activity-section glass">
 
 <h2>Activities</h2>
 
 <div class="slider">
 
-<img src="images/act1.jpg">
-<img src="images/act2.jpg">
-<img src="images/act3.jpg">
-<img src="images/act4.jpg">
+<div class="slides" id="slides">
+
+<img src="Activity1.jpg">
+<img src="Activity2.jpg">
+<img src="Activity3.jpg">
+<img src="Activity4.jpg">
+<img src="Activity5.jpg">
+<img src="Activity6.jpg">
+<img src="Activity7.jpg">
 
 </div>
 
-</section>
+</div>
+
+<div class="dots" id="dots"></div>
+
+</div>
 
 
+<!-- MENU -->
 
-<section class="menu-grid">
+<div class="grid">
 
-<a href="profile.html" class="card">ประวัติส่วนตัว</a>
+<div class="card glass">ประวัติส่วนตัว</div>
 
-<a href="education.html" class="card">ประวัติการศึกษา</a>
+<div class="card glass">ประวัติการศึกษา</div>
 
-<a href="works.html" class="card">ผลงาน</a>
+<div class="card glass">ผลงาน</div>
 
-<a href="activities.html" class="card">กิจกรรม</a>
+<div class="card glass">กิจกรรม</div>
 
-<a href="skills.html" class="card">ทักษะ</a>
+<div class="card glass">ทักษะ</div>
 
-</section>
+<div class="card glass">เกียรติบัตร</div>
+
+</div>
 
 
-<script src="script.js"></script>
+<script>
+
+let index=0
+const slides=document.getElementById("slides")
+const total=slides.children.length
+const dots=document.getElementById("dots")
+
+for(let i=0;i<total;i++){
+let d=document.createElement("span")
+d.className="dot"
+dots.appendChild(d)
+}
+
+function update(){
+
+slides.style.transform="translateX("+(-index*100)+"%)"
+
+let all=document.querySelectorAll(".dot")
+
+all.forEach(d=>d.classList.remove("active"))
+
+all[index].classList.add("active")
+
+}
+
+function slide(){
+
+index++
+
+if(index>=total) index=0
+
+update()
+
+}
+
+update()
+
+setInterval(slide,3000)
+
+</script>
 
 </body>
 </html>
