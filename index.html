@@ -1,58 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Portfolio</title>
+<title>Patcharawat Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<div class="cursor-glow"></div>
+<div class="bg"></div>
 
-<header class="navbar glass">
+<header class="navbar">
 
-<div class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</div>
+<div class="logo">PORTFOLIO</div>
 
-<div class="logo">Home</div>
+<nav>
+
+<a href="#home">Home</a>
+<a href="#activity">Activities</a>
+
+</nav>
 
 </header>
 
-<!-- หน้าแรก -->
-<section id="menu" class="hero">
 
-<div class="menu">
+<section id="home" class="hero">
 
-<img src="profilekun.png" class="profile">
+<div class="hero-container">
 
-  
-  
-<div class="card magnetic">ประวัติส่วนตัว</div>
-<div class="card magnetic">ประวัติการศึกษา</div>
-<div class="card magnetic">ผลงาน</div>
-<div class="card magnetic">กิจกรรม</div>
-<div class="card magnetic">ทักษะ</div>
-<div class="card magnetic">เกียรติบัตร</div>
+<div class="hero-left">
+
+<h1>PATCHARAWAT</h1>
+
+</div>
+
+
+<div class="hero-right">
+
+<img src="profilekun.png">
+
+</div>
 
 </div>
 
 </section>
 
 
-
-<!-- Activity -->
 <section id="activity">
 
 <h2>Activities</h2>
 
 <div class="slider">
+
+<button class="prev">‹</button>
 
 <div class="slides">
 
@@ -68,16 +75,30 @@
 <img src="Activity10.jpg">
 <img src="Activity11.jpg">
 <img src="Activity12.jpg">
-<img src="Activity13.jpg">
-<img src="Activity14.jpg">
 
 </div>
+
+<button class="next">›</button>
 
 </div>
 
 </section>
 
 
+<section class="menu-section">
+
+<div class="menu-grid">
+
+<a href="#" class="card">ประวัติส่วนตัว</a>
+<a href="#" class="card">ประวัติการศึกษา</a>
+<a href="#" class="card">ผลงาน</a>
+<a href="#activity" class="card">กิจกรรม</a>
+<a href="#" class="card">ทักษะ</a>
+<a href="#" class="card">เกียรติบัตร</a>
+
+</div>
+
+</section>
 
 <script src="script.js"></script>
 
