@@ -1,451 +1,82 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portfolio</title>
+<title>My Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
-
-/* ================= RESET ================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#020617;
-color:white;
-overflow-x:hidden;
-}
-
-
-/* ================= STARFIELD ================= */
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-2;
-}
-
-
-/* ================= GLOW BACKGROUND ================= */
-
-.glow{
-
-position:fixed;
-width:100%;
-height:100%;
-
-background:
-radial-gradient(circle at 20% 30%,rgba(0,150,255,.5),transparent 40%),
-radial-gradient(circle at 80% 70%,rgba(150,120,255,.5),transparent 40%),
-radial-gradient(circle at 40% 90%,rgba(0,255,200,.4),transparent 40%);
-
-filter:blur(120px);
-
-z-index:-1;
-
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-flex-direction:column;
-
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-animation:fadeIn 1.5s ease;
-
-}
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-.hero h1{
-
-font-size:70px;
-font-weight:800;
-
-letter-spacing:4px;
-
-text-shadow:
-0 0 20px rgba(255,255,255,.6),
-0 0 60px rgba(0,150,255,.6);
-
-}
-
-
-/* ================= PROFILE ================= */
-
-.profile{
-
-width:480px;      /* ขยายใหญ่ขึ้น */
-max-width:90%;
-
-margin-top:40px;
-
-filter:drop-shadow(0 30px 80px rgba(0,0,0,0.7));
-
-animation:float 6s ease-in-out infinite;
-
-                }
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0)}
-50%{transform:translateY(-25px)}
-100%{transform:translateY(0)}
-
-}
-
-
-/* ================= GLASS SECTION ================= */
-
-.glass{
-
-width:90%;
-max-width:1000px;
-
-margin:auto;
-margin-top:120px;
-
-padding:40px;
-
-border-radius:30px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(25px);
-
-border:1px solid rgba(255,255,255,.15);
-
-box-shadow:
-
-0 20px 60px rgba(0,0,0,.6),
-inset 0 0 20px rgba(255,255,255,.05);
-
-}
-
-
-/* ================= SECTION TITLE ================= */
-
-.title{
-
-font-size:32px;
-margin-bottom:30px;
-font-weight:600;
-
-}
-
-
-/* ================= SLIDER ================= */
-
-.slider{
-
-overflow:hidden;
-position:relative;
-
-}
-
-.slider-track{
-
-display:flex;
-
-animation:scroll 13s linear infinite;
-
-}
-
-.slide{
-
-min-width:240px;
-margin-right:20px;
-
-border-radius:20px;
-
-overflow:hidden;
-
-transition:transform .4s;
-
-}
-
-.slide img{
-
-width:100%;
-height:180px;
-
-object-fit:cover;
-
-}
-
-.slide:hover{
-
-transform:scale(1.1);
-
-}
-
-@keyframes scroll{
-
-0%{transform:translateX(0)}
-
-100%{transform:translateX(-50%)}
-
-}
-
-
-/* ================= MENU ================= */
-
-.menu{
-
-margin-top:70px;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-
-gap:20px;
-
-max-width:900px;
-
-margin-left:auto;
-margin-right:auto;
-
-padding:20px;
-
-}
-
-
-/* ================= CARD ================= */
-
-.card{
-
-padding:25px;
-
-border-radius:25px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.15);
-
-text-align:center;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:all .35s;
-
-box-shadow:0 15px 40px rgba(0,0,0,.5);
-
-}
-
-.card:hover{
-
-transform:translateY(-8px) scale(1.05);
-
-background:rgba(255,255,255,.15);
-
-box-shadow:
-
-0 30px 70px rgba(0,0,0,.7),
-0 0 30px rgba(120,200,255,.5);
-
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:50px;
-}
-
-.profile{
-width:230px;
-}
-
-.slide{
-min-width:200px;
-}
-
-}
-
-</style>
 </head>
-
-
 <body>
 
+<div class="cursor-glow"></div>
 
-<canvas id="stars"></canvas>
+<header class="navbar glass">
 
-<div class="glow"></div>
+<div class="logo">Portfolio</div>
+
+<nav>
+<a href="#menu">Home</a>
+<a href="#activity">Activity</a>
+<a href="#certificate">Certificate</a>
+</nav>
+
+</header>
 
 
-<section class="hero">
+<!-- หน้าแรก -->
+<section id="menu" class="hero">
 
-<h1>PORTFOLIO</h1>
+<div class="menu">
 
-<img src="profilekun.png" class="profile">
+<div class="card magnetic">ประวัติส่วนตัว</div>
+<div class="card magnetic">ประวัติการศึกษา</div>
+<div class="card magnetic">ผลงาน</div>
+<div class="card magnetic">กิจกรรม</div>
+<div class="card magnetic">ทักษะ</div>
+<div class="card magnetic">เกียรติบัตร</div>
+
+</div>
 
 </section>
 
 
 
-<div class="glass">
+<!-- Activity -->
+<section id="activity">
 
-<div class="title">
-Activities
-</div>
+<h2>Activities</h2>
 
 <div class="slider">
 
-<div class="slider-track">
+<div class="slides">
 
-<div class="slide"><img src="Activity1.jpg"></div>
-<div class="slide"><img src="Activity2.jpg"></div>
-<div class="slide"><img src="Activity3.jpg"></div>
-<div class="slide"><img src="Activity4.jpg"></div>
-<div class="slide"><img src="Activity5.jpg"></div>
-<div class="slide"><img src="Activity6.jpg"></div>
-<div class="slide"><img src="Activity7.jpg"></div>
-<div class="slide"><img src="Activity8.jpg"></div>
-<div class="slide"><img src="Activity9.jpg"></div>
-<div class="slide"><img src="Activity10.jpg"></div>
-<div class="slide"><img src="Activity11.jpg"></div>
-<div class="slide"><img src="Activity12.jpg"></div>
-<div class="slide"><img src="Activity13.jpg"></div>
-<div class="slide"><img src="Activity14.jpg"></div>
-
-<div class="slide"><img src="Activity1.jpg"></div>
-<div class="slide"><img src="Activity2.jpg"></div>
-<div class="slide"><img src="Activity3.jpg"></div>
-<div class="slide"><img src="Activity4.jpg"></div>
-<div class="slide"><img src="Activity5.jpg"></div>
-<div class="slide"><img src="Activity6.jpg"></div>
-<div class="slide"><img src="Activity7.jpg"></div>
-<div class="slide"><img src="Activity8.jpg"></div>
-<div class="slide"><img src="Activity9.jpg"></div>
-<div class="slide"><img src="Activity10.jpg"></div>
-<div class="slide"><img src="Activity11.jpg"></div>
-<div class="slide"><img src="Activity12.jpg"></div>
-<div class="slide"><img src="Activity13.jpg"></div>
-<div class="slide"><img src="Activity14.jpg"></div>
+<img src="Activity1.jpg">
+<img src="Activity2.jpg">
+<img src="Activity3.jpg">
+<img src="Activity4.jpg">
+<img src="Activity5.jpg">
+<img src="Activity6.jpg">
+<img src="Activity7.jpg">
+<img src="Activity8.jpg">
+<img src="Activity9.jpg">
+<img src="Activity10.jpg">
+<img src="Activity11.jpg">
+<img src="Activity12.jpg">
+<img src="Activity13.jpg">
+<img src="Activity14.jpg">
 
 </div>
 
 </div>
 
-</div>
+</section>
 
 
-<div class="menu">
 
-<div class="card">ประวัติส่วนตัว</div>
-<div class="card">ประวัติการศึกษา</div>
-<div class="card">ผลงาน</div>
-<div class="card">กิจกรรม</div>
-<div class="card">ทักษะ</div>
-<div class="card">เกียรติบัตร</div>
-
-</div>
-
-
-<script>
-
-/* ================= STARFIELD ================= */
-
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let stars=[];
-
-for(let i=0;i<250;i++){
-
-stars.push({
-
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2,
-d:Math.random()*0.7
-
-});
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle="white";
-
-stars.forEach(s=>{
-
-ctx.beginPath();
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fill();
-
-s.y+=s.d;
-
-if(s.y>canvas.height){
-
-s.y=0;
-s.x=Math.random()*canvas.width;
-
-}
-
-});
-
-}
-
-setInterval(draw,33);
-
-
-/* ================= PARALLAX ================= */
-
-window.addEventListener("scroll",()=>{
-
-document.querySelector(".profile").style.transform=
-"translateY("+window.scrollY*0.25+"px)";
-
-});
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
-                                              </html>
+</html>
