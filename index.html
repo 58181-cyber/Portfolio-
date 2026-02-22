@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 
 <title>Patcharawat Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,20 +16,21 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Inter',sans-serif;
 }
 
 body{
 
-background:#06161c;
 color:white;
 overflow-x:hidden;
 
+background:#020617;
+
 }
 
-/* =========================
-GALAXY BACKGROUND
-========================= */
+/* =====================
+APPLE GLOW BACKGROUND
+===================== */
 
 .bg{
 
@@ -37,102 +39,70 @@ width:100%;
 height:100%;
 
 background:
-radial-gradient(circle at 20% 30%,rgba(120,200,255,.4),transparent 40%),
-radial-gradient(circle at 80% 70%,rgba(170,120,255,.4),transparent 40%),
-linear-gradient(120deg,#03141b,#0a2a33,#0e3943);
+radial-gradient(circle at 20% 30%,rgba(120,200,255,.5),transparent 40%),
+radial-gradient(circle at 80% 60%,rgba(180,120,255,.5),transparent 40%),
+radial-gradient(circle at 50% 90%,rgba(120,255,220,.3),transparent 40%),
+linear-gradient(130deg,#030b1c,#0d2540,#173b6d);
+
+animation:bgMove 18s infinite alternate;
 
 z-index:-3;
 
-animation:bgmove 18s infinite alternate;
-
 }
 
-@keyframes bgmove{
+@keyframes bgMove{
 
 0%{
-background-position:0% 0%,100% 100%,0 0;
+background-position:0% 0%,100% 100%,50% 50%;
 }
 
 100%{
-background-position:25% 25%,75% 75%,0 0;
+background-position:20% 20%,80% 70%,40% 80%;
 }
 
 }
 
-/* =========================
-KEYNOTE LIGHT GLOW
-========================= */
+/* =====================
+GLASS NAVBAR
+===================== */
 
-.light{
+.navbar{
 
 position:fixed;
-width:900px;
-height:900px;
 
-background:radial-gradient(circle,
-rgba(140,220,255,.45),
-transparent 60%);
+top:20px;
+left:50%;
+transform:translateX(-50%);
 
-top:-200px;
-left:-200px;
+width:90%;
+max-width:1100px;
 
-filter:blur(80px);
+padding:15px 25px;
 
-animation:lightmove 12s infinite alternate;
+border-radius:20px;
 
-z-index:-2;
+background:rgba(255,255,255,.12);
 
-}
+backdrop-filter:blur(20px);
 
-@keyframes lightmove{
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-0%{
-transform:translate(0,0);
-}
-
-100%{
-transform:translate(300px,200px);
-}
+box-shadow:0 10px 30px rgba(0,0,0,.3);
 
 }
 
-/* =========================
-STAR PARTICLES
-========================= */
+.nav-title{
 
-.stars{
-
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px,transparent 1px);
-
-background-size:3px 3px;
-
-opacity:.2;
-
-animation:starMove 80s linear infinite;
-
-z-index:-1;
+font-weight:600;
+letter-spacing:2px;
 
 }
 
-@keyframes starMove{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-2000px);
-}
-
-}
-
-/* =========================
+/* =====================
 HERO
-========================= */
+===================== */
 
 .hero{
 
@@ -140,42 +110,79 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 
-padding:90px 8%;
-min-height:85vh;
+padding:140px 8% 100px;
 
-animation:fadein 1.3s ease;
+min-height:80vh;
 
 }
 
-.hero-text h2{
+.hero-text{
 
-font-weight:300;
-opacity:.8;
+max-width:500px;
 
 }
 
 .hero-text h1{
 
-font-size:60px;
+font-size:70px;
 font-weight:700;
-margin-top:8px;
+line-height:1.1;
 
 }
 
 .hero-text p{
 
-opacity:.7;
 margin-top:10px;
+opacity:.8;
 
 }
 
+/* =====================
+APPLE BUTTON
+===================== */
+
+.glow-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:14px 32px;
+
+border-radius:35px;
+
+font-weight:600;
+
+color:white;
+
+background:linear-gradient(135deg,#6be6ff,#9a7bff);
+
+box-shadow:
+
+0 0 25px rgba(120,200,255,.6),
+0 10px 25px rgba(0,0,0,.4);
+
+transition:.35s;
+
+}
+
+.glow-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* =====================
+PROFILE IMAGE
+===================== */
+
 .hero img{
 
-width:380px;
+width:420px;
 
-filter:drop-shadow(0 20px 40px rgba(0,0,0,.4));
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 
-animation:float 6s infinite ease-in-out;
+animation:float 6s ease-in-out infinite;
 
 }
 
@@ -187,23 +194,9 @@ animation:float 6s infinite ease-in-out;
 
 }
 
-@keyframes fadein{
-
-from{
-opacity:0;
-transform:translateY(30px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* =========================
-GLASS CARD
-========================= */
+/* =====================
+ACTIVITIES GLASS CARD
+===================== */
 
 .activities{
 
@@ -212,15 +205,15 @@ max-width:1100px;
 
 margin:auto;
 
-padding:35px;
+padding:40px;
 
-border-radius:26px;
+border-radius:28px;
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.1);
 
-backdrop-filter:blur(35px);
+backdrop-filter:blur(25px);
 
-box-shadow:0 10px 45px rgba(0,0,0,.35);
+box-shadow:0 20px 40px rgba(0,0,0,.4);
 
 }
 
@@ -228,13 +221,11 @@ box-shadow:0 10px 45px rgba(0,0,0,.35);
 
 margin-bottom:20px;
 
-font-weight:600;
-
 }
 
-/* =========================
-SLIDER
-========================= */
+/* =====================
+APP STORE SLIDER
+===================== */
 
 .slider{
 
@@ -245,13 +236,11 @@ overflow-x:auto;
 
 scroll-snap-type:x mandatory;
 
-padding-bottom:10px;
-
 }
 
 .slide{
 
-flex:0 0 260px;
+flex:0 0 250px;
 
 border-radius:18px;
 
@@ -266,7 +255,7 @@ transition:.35s;
 .slide img{
 
 width:100%;
-height:180px;
+height:170px;
 
 object-fit:cover;
 
@@ -278,9 +267,9 @@ transform:scale(1.07);
 
 }
 
-/* =========================
+/* =====================
 MENU
-========================= */
+===================== */
 
 .menu{
 
@@ -291,19 +280,19 @@ gap:20px;
 
 max-width:500px;
 
-margin:45px auto;
+margin:50px auto;
 
 }
 
 .card{
 
+padding:22px;
+
+border-radius:20px;
+
 background:rgba(255,255,255,.12);
 
 backdrop-filter:blur(25px);
-
-padding:24px;
-
-border-radius:20px;
 
 text-align:center;
 
@@ -311,62 +300,79 @@ font-weight:600;
 
 transition:.35s;
 
-box-shadow:0 6px 25px rgba(0,0,0,.35);
-
 }
 
 .card:hover{
 
-transform:translateY(-10px) scale(1.06);
-
-background:rgba(255,255,255,.18);
+transform:translateY(-10px);
 
 }
 
-/* =========================
+/* =====================
 MOBILE
-========================= */
+===================== */
 
 @media(max-width:900px){
 
 .hero{
+
 flex-direction:column;
+
 text-align:center;
+
 }
 
 .hero img{
-width:250px;
+
+width:260px;
+
 margin-top:30px;
+
 }
 
 .hero-text h1{
-font-size:40px;
+
+font-size:45px;
+
 }
 
 .menu{
+
 grid-template-columns:repeat(2,1fr);
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="bg"></div>
-<div class="light"></div>
-<div class="stars"></div>
+
+<div class="navbar">
+
+<div class="nav-title">
+
+PATCHARAWAT PORTFOLIO
+
+</div>
+
+<div>☰</div>
+
+</div>
 
 <section class="hero">
 
 <div class="hero-text">
 
-<h2>My name is</h2>
-
-<h1>PATCHARAWAT</h1>
+<h1>PORTFOLIO</h1>
 
 <p>Student | Science Program</p>
+
+<a class="glow-btn">View My Work</a>
 
 </div>
 
@@ -381,14 +387,11 @@ grid-template-columns:repeat(2,1fr);
 <div class="slider">
 
 <div class="slide"><img src="Activity1.jpg"></div>
-<div class="slide"><img src="Activity10.jpg"></div>
+<div class="slide"><img src="Activity7.jpg"></div>
 <div class="slide"><img src="Activity3.jpg"></div>
 <div class="slide"><img src="Activity4.jpg"></div>
 <div class="slide"><img src="Activity5.jpg"></div>
 <div class="slide"><img src="Activity6.jpg"></div>
-<div class="slide"><img src="Activity7.jpg"></div>
-<div class="slide"><img src="Activity8.jpg"></div>
-<div class="slide"><img src="Activity9.jpg"></div>
 
 </div>
 
