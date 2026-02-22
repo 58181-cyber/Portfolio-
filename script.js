@@ -1,26 +1,17 @@
 const slides = document.querySelector(".slides")
 
-const next = document.querySelector(".next")
-const prev = document.querySelector(".prev")
+let scrollAmount = 0
 
-next.onclick = () => {
+setInterval(()=>{
 
-slides.scrollBy({
+scrollAmount += 1
 
-left:300,
-behavior:"smooth"
+slides.scrollLeft = scrollAmount
 
-})
+if(scrollAmount > slides.scrollWidth){
 
-}
-
-prev.onclick = () => {
-
-slides.scrollBy({
-
-left:-300,
-behavior:"smooth"
-
-})
+scrollAmount = 0
 
 }
+
+},20)
