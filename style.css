@@ -100,26 +100,44 @@ animation:float 6s ease-in-out infinite;
 .hero{
 
 text-align:center;
-padding:40px 20px;
+padding:60px 20px;
+
+animation:heroEnter 1.2s ease;
 
 }
 
+@keyframes heroEnter{
+
+0%{
+opacity:0;
+transform:translateY(60px) scale(0.95);
+}
+
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+}
+
+
 .portfolio-title{
 
-width:280px;
-
-margin-bottom:20px;
+width:420px;
+max-width:85%;
 
 animation:float 6s ease-in-out infinite;
+margin-bottom:30px;
 
 }
 
 .profile{
 
-width:340px;
-
 display:block;
 margin:auto;
+
+width:360px;
+max-width:85%;
 
 animation:float 6s ease-in-out infinite;
 
@@ -128,8 +146,9 @@ border-radius:50%;
 box-shadow:
 0 0 40px rgba(120,160,255,0.6),
 0 0 80px rgba(120,160,255,0.4),
-0 0 120px rgba(120,160,255,0.2),
-0 0 300px rgba(120,160,255,0.25);
+0 0 150px rgba(120,160,255,0.25),
+0 0 300px rgba(120,160,255,0.15);
+
 transition:0.5s;
 
 }
@@ -139,11 +158,12 @@ transition:0.5s;
 transform:scale(1.05);
 
 box-shadow:
-0 0 60px rgba(120,160,255,0.8),
-0 0 120px rgba(120,160,255,0.6),
-0 0 200px rgba(120,160,255,0.4);
+0 0 80px rgba(120,160,255,0.8),
+0 0 160px rgba(120,160,255,0.6),
+0 0 300px rgba(120,160,255,0.35);
 
-  }
+}
+
 
 /* ACTIVITY */
 
@@ -304,7 +324,8 @@ width:420px;
 }
 
 .grid{
-grid-template-columns:repeat(3,200px);
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .slides img{
@@ -313,5 +334,17 @@ width:320px;
 height:210px;
 
 }
+/* MOBILE */
+@media (max-width:768px){
+
+.profile{
+width:300px;
+}
+
+.portfolio-title{
+width:340px;
+}
+
+  }
 
   }
