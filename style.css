@@ -2,186 +2,148 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+font-family:sans-serif;
 }
 
 body{
-background:#020617;
+background: radial-gradient(circle at top,#001533,#000814);
 color:white;
 overflow-x:hidden;
 }
 
-/* navbar */
+/* STAR BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 1px, transparent 1px);
+background-size:50px 50px;
+opacity:0.2;
+animation:stars 60s linear infinite;
+}
+
+@keyframes stars{
+from{transform:translateY(0);}
+to{transform:translateY(-2000px);}
+}
+
+/* NAVBAR */
 
 .navbar{
 position:fixed;
 top:0;
 width:100%;
+height:60px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:18px 40px;
-z-index:100;
-}
-
-.navbar a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-opacity:.8;
-}
-
-.navbar a:hover{
-opacity:1;
-}
-
-/* glass */
-
-.glass{
+justify-content:space-between;
+padding:0 20px;
+backdrop-filter: blur(20px);
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:10;
 }
 
-/* hero */
+/* HAMBURGER */
+
+.hamburger{
+width:30px;
+cursor:pointer;
+}
+
+.hamburger span{
+display:block;
+height:3px;
+background:white;
+margin:6px 0;
+border-radius:3px;
+}
+
+/* HERO */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
+padding-top:120px;
+text-align:center;
 }
 
-/* menu grid */
+/* PROFILE */
+
+.profile{
+width:140px;
+border-radius:50%;
+margin-bottom:40px;
+box-shadow:
+0 0 30px rgba(0,140,255,0.6),
+0 0 60px rgba(0,140,255,0.3);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+/* MENU */
 
 .menu{
 display:grid;
-grid-template-columns:repeat(3,200px);
-gap:25px;
+grid-template-columns:1fr 1fr;
+gap:30px;
+padding:30px;
 }
 
-/* card */
+/* CARD */
 
 .card{
-
-height:140px;
-
+height:130px;
 display:flex;
 align-items:center;
 justify-content:center;
-
-background:rgba(255,255,255,0.08);
-
 border-radius:25px;
 
-backdrop-filter:blur(25px);
+background:rgba(255,255,255,0.08);
+backdrop-filter: blur(20px);
 
 border:1px solid rgba(255,255,255,0.1);
 
-font-size:18px;
+font-size:20px;
 
-transition:.35s;
-
-cursor:pointer;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.5);
-
+transition:0.3s;
 }
+
+/* HOVER */
 
 .card:hover{
-
-transform:translateY(-10px) scale(1.05);
-
+transform:scale(1.07);
 box-shadow:
-0 20px 60px rgba(0,150,255,0.4);
-
+0 0 20px rgba(0,140,255,0.6),
+0 0 40px rgba(0,140,255,0.4);
 }
 
-/* activity */
+/* ACTIVITY */
 
 #activity{
-
-padding:120px 10%;
-text-align:center;
-
+padding:80px 20px;
 }
-
-#activity h2{
-
-font-size:40px;
-margin-bottom:40px;
-
-}
-
-/* slider */
 
 .slider{
-
-overflow:hidden;
-
-}
-
-.slides{
-
+overflow-x:auto;
+scroll-snap-type:x mandatory;
 display:flex;
 gap:20px;
-
-animation:slide 25s linear infinite;
-
 }
 
-.slides img{
-
+.slider img{
 width:260px;
-height:170px;
-object-fit:cover;
-
 border-radius:20px;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.6);
-
+scroll-snap-align:center;
+transition:0.3s;
 }
 
-@keyframes slide{
-
-0%{transform:translateX(0)}
-
-100%{transform:translateX(-50%)}
-
-}
-
-/* cursor glow */
-
-.cursor-glow{
-
-position:fixed;
-
-width:300px;
-height:300px;
-
-background:radial-gradient(circle,rgba(0,150,255,.25),transparent 70%);
-
-pointer-events:none;
-
-transform:translate(-50%,-50%);
-
-z-index:-1;
-
-}
-
-/* mobile */
-
-@media(max-width:768px){
-
-.menu{
-grid-template-columns:repeat(2,160px);
-}
-
-.slides img{
-width:200px;
-height:130px;
-}
-
+.slider img:hover{
+transform:scale(1.05);
   }
