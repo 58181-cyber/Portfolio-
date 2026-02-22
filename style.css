@@ -135,11 +135,14 @@ margin-bottom:30px;
 
 .profile{
 
+.profile{
+
 display:block;
 margin:auto;
 
 width:360px;
 max-width:85%;
+height:auto;
 
 animation:float 6s ease-in-out infinite;
 
@@ -153,7 +156,7 @@ box-shadow:
 
 transition:0.5s;
 
-}
+  }
 
 .profile:hover{
 
