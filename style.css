@@ -104,6 +104,8 @@ padding:60px 20px;
 
 animation:heroEnter 1.2s ease;
 
+background:none;
+
 }
 
 @keyframes heroEnter{
