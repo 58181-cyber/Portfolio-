@@ -125,43 +125,37 @@ box-shadow:
 
 animation:float 7s ease-in-out infinite;
 }
-/* ACTIVITY */
+
+/* ACTIVITY SLIDER */
 
 .activity-section{
-
 padding:40px 0;
-
+overflow:hidden;
 }
 
 .slider{
-
 overflow:hidden;
-
+width:100%;
 }
 
 .slides{
-
 display:flex;
-
-gap:15px;
+gap:16px;
 width:max-content;
-animation:slide 17s linear infinite;
 
-padding-left:20px;
-
+animation:slide 25s linear infinite;
 }
 
 .slides img{
 
-width:200px;
-height:140px;
+width:150px;
+height:100px;
 
-border-radius:25px;
+border-radius:18px;
 
 object-fit:cover;
 
-box-shadow:
-0 10px 30px rgba(0,0,0,0.35);
+box-shadow:0 8px 25px rgba(0,0,0,0.35);
 
 transition:0.4s;
 
@@ -171,16 +165,15 @@ transition:0.4s;
 
 transform:scale(1.08);
 
-box-shadow:
-0 20px 60px rgba(120,150,255,0.4);
-
 }
 
-.slides img{
+/* ANIMATION */
 
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.15);
+@keyframes slide{
+
+0%{transform:translateX(0)}
+
+100%{transform:translateX(-50%)}
 
 }
 
