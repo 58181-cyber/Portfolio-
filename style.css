@@ -143,9 +143,9 @@ overflow:hidden;
 
 display:flex;
 
-gap:20px;
-
-animation:slide 11s linear infinite;
+gap:15px;
+width:max-content;
+animation:slide 17s linear infinite;
 
 padding-left:20px;
 
@@ -173,6 +173,14 @@ transform:scale(1.08);
 
 box-shadow:
 0 20px 60px rgba(120,150,255,0.4);
+
+}
+
+.slides img{
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.15);
 
 }
 
