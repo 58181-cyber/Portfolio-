@@ -323,22 +323,27 @@ transform:translate(-50%,-50%);
 }
 
 .header{
+
 position:fixed;
 top:0;
 left:0;
 width:100%;
 
-padding:20px;
-
 display:flex;
 align-items:center;
+justify-content:space-between;
 
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
+padding:10px 18px;
 
-border-bottom:1px solid rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,0.15);
+
+z-index:1000;
+
 }
-
 .logo{
 height:62px;
 }
