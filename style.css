@@ -145,7 +145,7 @@ display:flex;
 
 gap:20px;
 
-animation:slide 16s linear infinite;
+animation:slide 11s linear infinite;
 
 padding-left:20px;
 
@@ -153,14 +153,26 @@ padding-left:20px;
 
 .slides img{
 
-width:240px;
-height:170px;
+width:200px;
+height:140px;
 
 border-radius:25px;
 
 object-fit:cover;
 
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
+box-shadow:
+0 10px 30px rgba(0,0,0,0.35);
+
+transition:0.4s;
+
+}
+
+.slides img:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 20px 60px rgba(120,150,255,0.4);
 
 }
 
