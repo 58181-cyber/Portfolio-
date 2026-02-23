@@ -382,25 +382,26 @@ object-fit:cover;
 z-index:-1;
 }
 /* DESKTOP */
-
 @media(max-width:768px){
 
 .profile{
-width:420px;
+width:80%;
+margin:auto;
 }
 
 .portfolio-title{
-width:420px;
+width:90%;
 }
 
 .grid{
-grid-template-columns:repeat(3,200px);
+grid-template-columns:1fr;
+gap:15px;
 }
 
 .slides img{
-
-width:320px;
-height:210px;
+width:90%;
+height:auto;
+}
 
 }
 
