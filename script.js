@@ -17,4 +17,4 @@ let y = (window.innerHeight/2 - e.clientY)/40
 document.querySelector(".hero").style.transform =
 `translate(${x}px,${y}px)`
 
-})
+}
